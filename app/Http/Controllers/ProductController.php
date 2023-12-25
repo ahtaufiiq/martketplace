@@ -50,4 +50,15 @@ class ProductController extends Controller
         $product = Product::create($request->all());
         return Redirect::route('home');
     }
+    public function editProduct(Request $request, int $id)
+    {
+        $request->validate([
+            'nama_produk' => 'required',
+            'harga' => 'required|integer'
+        ]);
+
+        $product = Product::find($id);
+        $product->update($request->all());
+        return Redirect::route('home');
+    }
 }

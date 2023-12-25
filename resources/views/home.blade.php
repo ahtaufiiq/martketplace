@@ -54,6 +54,7 @@
                             </td>
                             @if (Auth::check() && Auth::user()->user_type == 'admin')
                             <td class="px-6 py-4 flex flex-col items-center text-center">
+                                <a href="#" data-modal-target="editProduk-{{$product->id_produk}}" data-modal-toggle="editProduk-{{$product->id_produk}}"  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 <a href="#" data-modal-target="hapusProduk-{{$product->id_produk}}" data-modal-toggle="hapusProduk-{{$product->id_produk}}" class="hover:underline mt-1 font-medium text-red-600 dark:text-blue-500 hover:Delete">Delete</a>
                             </td>
                             @endif
@@ -65,10 +66,12 @@
             {{ $products->links() }}
         </div>
     </div>
+
     
     @include('components.modal.tambah-produk')
 
     @foreach($products as $product)
+    @include('components.modal.edit-produk')
     @include('components.modal.hapus-produk')
     @endforeach
 </x-app-layout>

@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::controller(ProductController::class)
     ->middleware(['auth', 'verified', OnlyAdminMiddleware::class])->group(function () {
+        Route::delete('/produk/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');
         Route::post('/produk', [ProductController::class, 'addProduct'])->name('addProduct');
+        Route::put('/produk/{id}', [ProductController::class, 'editProduct'])->name('editProduct');
     });
 
 Route::middleware('auth')->group(function () {

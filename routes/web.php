@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
+Route::controller(ProductController::class)
+    ->middleware(['auth', 'verified', OnlyAdminMiddleware::class])->group(function () {
+        Route::post('/produk', [ProductController::class, 'addProduct'])->name('addProduct');
+    });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -34,4 +34,13 @@ class ProductController extends Controller
             'statuses' => $statuses
         ]);
     }
+    public function addProduct(Request $request)
+    {
+        $request->validate([
+            'nama_produk' => 'required',
+            'harga' => 'required|integer'
+        ]);
+        $product = Product::create($request->all());
+        return Redirect::route('home');
+    }
 }

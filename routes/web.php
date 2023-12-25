@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
+Route::post('/produk/cari', [ProductController::class, 'search'])->name('searchProduct');
 Route::controller(ProductController::class)
     ->middleware(['auth', 'verified', OnlyAdminMiddleware::class])->group(function () {
         Route::delete('/produk/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');

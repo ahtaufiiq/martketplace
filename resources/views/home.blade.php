@@ -28,7 +28,7 @@
                                 {{ $product->nama_produk }}
                             </td>
                             <td class="px-6 py-4 text-center">
-                                 {{$product->harga}} 
+                                 @currency($product->harga) 
                             </td>
                             <td class="px-6 py-4 text-center">
                                 {{ $product->kategori }}

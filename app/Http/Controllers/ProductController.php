@@ -45,7 +45,9 @@ class ProductController extends Controller
     {
         $request->validate([
             'nama_produk' => 'required',
-            'harga' => 'required|integer'
+            'harga' => 'required|integer',
+            'kategori_id' => 'required',
+            'status_id' => 'required',
         ]);
         $product = Product::create($request->all());
         return Redirect::route('home');
@@ -54,7 +56,9 @@ class ProductController extends Controller
     {
         $request->validate([
             'nama_produk' => 'required',
-            'harga' => 'required|integer'
+            'harga' => 'required|integer',
+            'kategori_id' => 'required',
+            'status_id' => 'required',
         ]);
 
         $product = Product::find($id);

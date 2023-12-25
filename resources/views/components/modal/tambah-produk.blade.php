@@ -28,8 +28,8 @@
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="kategori_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
-                        <select id="kategori_id" name="kategori_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option selected="">Pilih Kategori</option>
+                        <select required id="kategori_id" name="kategori_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option disabled selected value="">Pilih Kategori</option>
                             @foreach ($categories as $item)
                                 <option value={{$item->id_kategori}}>{{$item->nama_kategori}}</option>
                             @endforeach
@@ -37,8 +37,8 @@
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="status_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
-                        <select id="status_id" name="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                            <option selected="">Pilih Status</option>
+                        <select required id="status_id" name="status_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option disabled selected value="">Pilih Status</option>
                             @foreach ($statuses as $item)
                                  <option value={{$item->id_status}}>{{$item->nama_status}}</option>
                             @endforeach

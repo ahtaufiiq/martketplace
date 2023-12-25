@@ -49,7 +49,7 @@
                         </x-slot>
                     </x-dropdown>
                 @else
-                <a href="{{ route('login') }}" class="font-semibold text-gray-600  dark:text-gray-400 dark:hover:text-black focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Admin  Login</a>
+                <a href="{{ route('login') }}" class="font-semibold text-gray-600  dark:text-gray-400 dark:hover:text-black focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Login</a>
                 @endif
 
             </div>

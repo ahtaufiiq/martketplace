@@ -256,8 +256,6 @@ class ProductSeeder extends Seeder
             ]
         ];
 
-        // Product::insert($data);
-        $product = Product::find(24);
-        echo ($product);
+        Product::insert($data);
     }
 }

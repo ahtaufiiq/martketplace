@@ -19,6 +19,12 @@ class DatabaseSeeder extends Seeder
             'password' => 'qwerty123',
             'user_type' => 'admin',
         ]);
+        \App\Models\User::factory()->create([
+            'name' => 'andi',
+            'email' => 'andi@example.com',
+            'password' => 'qwerty123',
+            'user_type' => 'user',
+        ]);
         $this->call(CategorySeeder::class);
         $this->call(StatusSeeder::class);
         $this->call(ProductSeeder::class);

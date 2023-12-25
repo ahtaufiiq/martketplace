@@ -34,6 +34,13 @@ class ProductController extends Controller
             'statuses' => $statuses
         ]);
     }
+
+    public function deleteProduct(int $id)
+    {
+        Product::where('id_produk', $id)->delete();
+        return Redirect::route('home');
+    }
+
     public function addProduct(Request $request)
     {
         $request->validate([

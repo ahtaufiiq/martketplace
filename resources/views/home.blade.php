@@ -33,6 +33,11 @@
                             <th scope="col" class="px-6 py-3 text-center">
                                 Kategori
                             </th>
+                            @if (Auth::check() && Auth::user()->user_type == 'admin')
+                            <th scope="col" class="px-6 py-3 text-center">
+                                Action
+                            </th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +52,11 @@
                             <td class="px-6 py-4 text-center">
                                 {{ $product->kategori }}
                             </td>
+                            @if (Auth::check() && Auth::user()->user_type == 'admin')
+                            <td class="px-6 py-4 flex flex-col items-center text-center">
+                                <a href="#" data-modal-target="hapusProduk-{{$product->id_produk}}" data-modal-toggle="hapusProduk-{{$product->id_produk}}" class="hover:underline mt-1 font-medium text-red-600 dark:text-blue-500 hover:Delete">Delete</a>
+                            </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>
@@ -55,5 +65,10 @@
             {{ $products->links() }}
         </div>
     </div>
+    
     @include('components.modal.tambah-produk')
+
+    @foreach($products as $product)
+    @include('components.modal.hapus-produk')
+    @endforeach
 </x-app-layout>

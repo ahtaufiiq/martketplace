@@ -80,7 +80,7 @@ Run the following command to start the Laravel development server:
 php artisan serve
 ```
 
-Make sure to run the npm command separately, in another terminal, to watch for changes:
+Make sure to run the npm command separately, in another terminal:
 
 ```bash
 npm run dev
@@ -88,9 +88,9 @@ npm run dev
 
 ## User Types
 
-### Guest / Users
+### Users
 
--   Guest / Users can only view or search for products.
+-   Users can only view or search for products.
 
 ### Admin Users
 
@@ -132,11 +132,11 @@ To log in as an admin, use the following credentials:
 
 -   Show only products with the status "bisa dijual."
 
-#### Guest Users
+#### Users
 
--   As a guest user, upon visiting the home page, you will see a display of products available for sale.
+-   Users will see a display of products available for sale.
 
-    ![Guest User Display](/demo/show-product-for-user.png)
+    ![User Display](/demo/show-product-for-user.png)
 
 #### Admin Users
 
@@ -147,22 +147,26 @@ To log in as an admin, use the following credentials:
 ### Search Product
 
 -   Users can search for products by product name.
+
     ![Search Product](/demo/search-product.png)
 
 ### Delete Product
 
 -   Implement a feature to delete existing products.
 -   Provide confirmations before delete product.
+
     ![Delete Product](/demo/delete-product.png)
 
 ### Add Product
 
 -   Implement a feature to add new products.
+
     ![Add Product](/demo/add-product.png)
 
 ### Edit Product
 
 -   Implement a feature to edit existing products.
+
     ![Edit Product](/demo/edit-product.png)
 
 ## Validation

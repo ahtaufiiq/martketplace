@@ -44,6 +44,13 @@ This is a simple Product Management System with basic CRUD functionality and sta
 
 ## Setup
 
+### Git Clone
+
+```bash
+git clone git@github.com:ahtaufiiq/product-management-system.git
+cd product-management-system
+```
+
 ### Composer and NPM Installation
 
 ```bash
@@ -85,6 +92,8 @@ Make sure to run the npm command separately, in another terminal:
 ```bash
 npm run dev
 ```
+
+Once the server is running, open your web browser and go to http://localhost:8000 to access the Product Management System.
 
 ## User Types
 
